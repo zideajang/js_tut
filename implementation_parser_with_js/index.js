@@ -1,5 +1,5 @@
 
-const input = "777787777";
+const input = "777";
 
 function trace(name,v){
     console.log(name);
@@ -11,16 +11,29 @@ function trace(name,v){
 function* lexer(str){
 
     for (let cursor = 0; cursor <= str.length; cursor++) {
-        const char = str[cursor];
-        if( char === '7'){
-            yield{
-                type:'number',
-                value:7,
-                // loc:{
-                //     begin:cursor,
-                //     end:cursor+1,
-                // }
+        let char = str[cursor];
+
+        function number(){
+            let value = ""
+
+            for(; cursor <= str.length; cursor++){
+                char = str[cursor];
+                if(char === '7'){
+                    //TODO
+                    value +=7
+                }else{
+                    break;
+                }
             }
+
+            return {
+                type:'number',
+                value,
+            }
+        }
+
+        if( char === '7'){
+            yield number()
         }else if (char === undefined){
             
             yield {
