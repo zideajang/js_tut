@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- <script src="index.js"></script> -->
+    <script>
+
+        var bitField = 0;  // the value to hold the bits
+        const KEY_BITS = [4,1,8,2]; // left up right down
+        const KEY_MASKS = [0b1011,0b1110,0b0111,0b1101]; // left up right down
+        // window.onkeydown = window.onkeyup = function (e) {
+        //     if(e.keyCode >= 37 && e.keyCode <41){
+        //         if(e.type === "keydown"){
+        //             bitField |= KEY_BITS[e.keyCode - 37];
+        //             // console.log("keydown" + bitField)
+        //         }else{
+        //             bitField &= KEY_MASKS[e.keyCode - 37];
+        //             // console.log("keyup" + bitField)
+        //         }
+        //     }    
+        //     // console.log(bitField)
+        //     if(!bitField){
+        //         // no keys are on
+        //         console.log(222)
+        //     }
+        // }
+
+        // var directionState = [false,false,false,false];
+        // window.onkeydown = window.onkeyup = function (e) {
+        //     if(e.keyCode >= 37 && e.keyCode <41){
+        //         directionState[e.keyCode - 37] = e.type === "keydown";
+        //     }    
+        //     console.log(directionState)
+            
+        // }
+
+
+        const KEY_U = 1;//0b0000
+        const KEY_D = 2;//0b0001
+        const KEY_L = 4;//0b0010
+        const KEY_R = 8;//0b0100
+        const KEY_UL = KEY_U + KEY_L; // up left 0b0101
+        const KEY_UR = KEY_U + KEY_R; // up Right
+        const KEY_DL = KEY_D + KEY_L; // down left
+        const KEY_DR = KEY_D + KEY_R; // down right
+        
+        // 0b0101
+        console.log(KEY_UL)
+        
+        // if(!(directionState[0] && directionState[1] && directionState[2] && directionState[3])){
+        //     console.log(111)
+        // }
+        
+        
+                
+
+
+    </script>
+</body>
+</html>
