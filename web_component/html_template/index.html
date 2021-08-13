@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="card-tmpl">
+        <style>
+            #card{
+                flex-direction: row;
+                background-color: lightblue;
+            }
+            #title{
+                align-items: center;
+                justify-self: center;
+                color: darkslateblue;
+            }
+        </style>
+        <div id="card">
+            <h2 id="title">machine learning</h2>
+            <div id="content"></div>
+        </div>
+    </template>
+    <my-card id="container">
+        
+    </my-card>
+    <script>
+        console.log('111')
+        customElements.define('my-card',
+            class extends HTMLElement {
+                constructor() {
+                    super();
+                    var template = document
+                        .getElementById('card-tmpl')
+                        .content;
+                    console.log(template)
+                    const shadowRoot = this.attachShadow({mode: 'open'})
+                        .appendChild(template.cloneNode(true));
+            }
+        })
+    </script>
+</body>
+</html>

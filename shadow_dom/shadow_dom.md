@@ -68,7 +68,7 @@ Shadow DOM被设计为构建基于组件的应用程序的工具。因此，它�
 
 如果 HTML 算是语言的话，我接触第一门语言就是 HTML，HTML 的简单和易于操作推动 web 发展，只需要简单地声明一些标签(tag)，就可以编写一个既有表现力又有结构的页面。然而 HTML 作为基于文本的语言设计初衷便于人类理解，但机器需要更多的东西，得到一个**文档对象模型**，或称 DOM。
 
-<img src="../images/006.jpeg">
+<img src="./images/006.png">
 
 #### 页面加载过程
 
@@ -119,7 +119,7 @@ Shadow DOM 只是普通的 DOM，不过与普通 DOM 有两个不同之处
 
 一般情况，当创建 DOM 节点后，然后将其添加一个 DOM 元素，同时可以为其添加一个子结点。而在 shadow DOM 中，其实创建了一个具有作用域 DOM 树，然后将其添加一个元素上，实际上这个 DOM 与父结点间的关系不大。这个作用域的子树称为 shadow tree。shadow 添加到元素是 shadow host， shadow host 是 DOM 元素。在 shadow DOM 下添加任何结点都是和外界隔离具有自己空间，包括 `<style>`，这里 CSS 仅是作用域 shadow DOM 的样式。
 
-<img src="../images/007.svg">
+<img src="./images/007.svg">
 
 - Shadow host：一个常规 DOM节点，Shadow DOM 会被附加到这个节点上。
 - Shadow tree：Shadow DOM内部的DOM树。
@@ -214,16 +214,3 @@ customElements.define('fancy-tabs', class extends HTMLElement {
 ```
 
 
-#### Composition 和 Slot
-组合是 shadow DOM 中最不为人知的功能之一，但可以说是最重要的。
-
-在我们的 web 开发领域中，组合是如何从 HTML 中声明式地构建应用程序。不同的构件`（<div>s、<header>s、<form>s、<input>s）`组合在一起，形成应用程序。这些标签中的一些甚至可以相互配合。例如 `<select>、<details>、<form>`和`<video>`
-
-- 对于`<select>`，知道如何处理其包裹的子元素，<option>`和`<optgroup>` ，这些元素渲染后下拉菜单等
-
-- `<details>`元素将`<summary>`渲染出来在 summary 文本右侧带有可控制展开或收起 `<details>`的标签内容小控件
-- `<video>`也知道如何处理其 child 结点。`<source>`元素不会被渲染，视频的行为
-
-
-
-#### 虚拟DOM 和 shadow DOM

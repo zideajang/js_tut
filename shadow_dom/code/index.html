@@ -13,25 +13,19 @@
 </head>
 <body>
     <div>
-        <div id="container"></div>
-        <div id="temp"></div>
+        <template id="container">
+            <div>111</div>
+            <div>222</div>
+        </template>
+        <better-button>
+            <!-- the image and span are better-button's light DOM -->
+            <!-- <img src="gear.svg" slot="icon"> -->
+            <span>Settings</span>
+          </better-button>
     </div>
     <script>
-        const temp = document.getElementById("temp");
-        shadowRoot = temp.attachShadow({mode:'open'});
-
-
-        shadowRoot.innerHTML = 
-        `<h1>This is <span>Shadow DOM</span> example<h1>`
-        
-        const aSpan = temp.shadowRoot.querySelector("span");
-        aSpan.addEventListener("click",function(event){
-            console.log("click on ")
-        })
-
-        // class MyLightingWebComponent extends LightingElement{
-
-        // }
+        const containerContent = container.content;
+        console.log(containerContent)
         
     </script>
 </body>
