@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web component</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* my-counter{
+            width: 100vw;
+        } */
+        my-counter::part(title){
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <template>
+        <div>
+            <div>template</div>
+        </div>
+    </template>
+    <my-counter style="--background-bg-color: lightblue; --btn-width:600px;" id="counter" count="10"></my-counter>
+    <!-- <button onclick="update"></button> -->
+    <script type="module" src="counter.js"></script>
+
+    <script>
+        function update(){
+
+            let counter = document.querySelector("#counter")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Component with States</title>
+</head>
+<body>
+    <template id="image-gallery">
+        <div class="image-gallery__container">
+            <img class="image-gallery__image">
+        </div>
+    </template>
+   
+    <img-gallery></img-gallery>
+    <script>
+        const template = document.querySelector('#image-gallery');
+
+        //
+        const img = template.content.querySelector("img");
+        img.src = "./src/web_component.png";
+        img.alt = "web component";
+
+        // const container = document.querySelector("#container");
+        // const clone = document.importNode(template.content,true);
+        // container.appendChild(clone)
+
+        class ImageGallery extends HTMLElement{
+            constructor(){
+                super();
+                this.attachShadow({mode:'open'});
+                // console.log(this.shadowRoot)
+                this.shadowRoot.appendChild(template.content,true);
+            }
+        }
+
+        customElements.define("img-gallery",ImageGallery)
+
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const input = "778";
+const input = "7778";
 
 function trace(name,v){
     console.log(name);
